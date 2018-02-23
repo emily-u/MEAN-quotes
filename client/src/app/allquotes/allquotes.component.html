@@ -1,0 +1,23 @@
+<h1>Quote Ranks</h1>
+<a href="/">Home</a>
+
+<a [routerLink]="['/write', id]"><button>Add a quotes</button></a>
+
+<h3>Quotes by {{authors.name}}</h3>
+
+<table>
+    <tr>
+      <th>Quotes</th>
+      <th>Votes</th>
+      <th>Actions available</th> 
+    </tr>
+    <tr *ngFor="let t of authors.quotes; let i = index">
+      <td>{{t.text}}</td>
+      <td>{{t.votes}}</td>
+      <td>
+        <button (click) = "vote(i, true)">Vote up</button>
+        <button (click) = "vote(i, false)">Vote down</button>
+        <button (click) = "deleteQuoteClicked(i)">Delete</button>
+      </td>
+    </tr>
+</table>

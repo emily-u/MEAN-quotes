@@ -1,0 +1,18 @@
+<h1>Quote Ranks</h1>
+<a [routerLink]="['new']">Add a quotable author</a>
+
+
+<table>
+    <tr>
+      <th>Author</th>
+      <th>Actions available</th> 
+    </tr>
+    <tr *ngFor="let t of authors">
+      <td>{{t.name}}</td>
+      <td>
+        <a [routerLink]="['/quotes', t._id]">View quotes</a>
+        <a [routerLink]="['/edit', t._id, t.name]">Edit</a>
+        <button (click) = "deleteButtonClicked(t._id)">Delete</button>
+      </td>
+    </tr>
+</table>

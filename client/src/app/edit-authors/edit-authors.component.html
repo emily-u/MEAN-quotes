@@ -1,0 +1,10 @@
+<h1>Favorite authors</h1>
+<a href="/">Home</a>
+<p *ngIf = "error !== null" style="color: red;">{{error}}</p>
+<h3>Edit this author:</h3>
+<form (submit)="editSubmit()">
+<label for="">Name</label>
+<input type="text" [(ngModel)]="editAuthor.name" name="editauthorName"><br>
+<button><a href="/">Cancel</a></button>
+<button>Submit</button>
+</form>

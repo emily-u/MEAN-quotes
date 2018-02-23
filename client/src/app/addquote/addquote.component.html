@@ -1,0 +1,26 @@
+<h3>Quote Ranks</h3>
+<a href="/">Home</a>
+
+
+<h4>Provide a quote by {{authors.name}}</h4>
+
+
+<form (submit)="addQuoteSubmit()" #addquote = "ngForm">
+    <label for="">Quote:</label>
+    <input type="text" [(ngModel)]="quote.text" name="quotes.text" required minlength="3" #quo = "ngModel"><br>
+    <span *ngIf = "quo.invalid && (quo.dirty || quo.touched)">
+        <span *ngIf = "quo.errors.required">
+            Quote is required.
+        </span>
+        <span *ngIf = "quo.errors.minlength">
+            At least 3 characters.
+        </span>
+    </span>
+
+    <!-- <select [(ngModel)] = "quote.star" name="star">
+        <option value="1">1 star</option>
+        <option value="2">2</option> 
+    </select> -->
+    <button [disabled] = "addquote.invalid">Submit</button>
+</form>
+<a [routerLink]="['/quotes', id]"><button>Cancel</button></a>
