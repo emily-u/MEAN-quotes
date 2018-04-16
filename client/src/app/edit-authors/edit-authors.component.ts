@@ -8,7 +8,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./edit-authors.component.css']
 })
 export class EditAuthorsComponent implements OnInit {
-  authors;
   editAuthor = {
     name: "",
     author: ""
@@ -23,7 +22,7 @@ export class EditAuthorsComponent implements OnInit {
 
   ngOnInit() {
     this._route.paramMap.subscribe((params) => {
-      console.log(params);
+      console.log("2323",params);
       this.editAuthor.name= params.get("authorname");
     })
     console.log("edit name: ", this.editAuthor.name);

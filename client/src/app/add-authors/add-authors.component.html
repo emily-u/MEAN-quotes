@@ -5,6 +5,6 @@
 <form (submit)="addSubmit()">
 <label for="">Name</label>
 <input type="text" [(ngModel)]="newAuthor.name" name="authorName"><br>
-<button><a href="/">Cancel</a></button>
 <button>Submit</button>
 </form>
+<button [routerLink]="['/']">cancel</button>
